@@ -6,8 +6,8 @@ LOADEDCLASSES=$((400*$1))
 STACKTHREADS=$((15 + $1 * 6 / 10))
 
 FULL_CMD="$EXE -loadedClasses $LOADEDCLASSES -poolType metaspace -stackThreads $STACKTHREADS -totMemory $2"
-echo "Full CMD: $FULL_CMD"
-echo
+#echo "Full CMD: $FULL_CMD"
+#echo
 
 unset t_std t_err
 eval "$( ($FULL_CMD) 2> >(readarray -t t_err; typeset -p t_err) > >(readarray -t t_std; typeset -p t_std) )"
